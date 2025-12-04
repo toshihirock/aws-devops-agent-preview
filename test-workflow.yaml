@@ -1,0 +1,13 @@
+name: Deploy SAM
+on:
+  push:
+    branches: [main]
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: aws-actions/setup-sam@v2
+      - uses: aws-actions/configure-aws-credentials@v4
+      - run: sam build
+      - run: sam deploy --no-confirm-changeset
