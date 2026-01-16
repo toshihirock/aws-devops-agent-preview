@@ -23,6 +23,7 @@ jobs:
             --no-fail-on-empty-changeset \
             --stack-name FromGitHubActions \
             --resolve-s3 \
+            --capabilities CAPABILITY_IAM \
             --parameter-overrides \
               DevOpsAgentWebhookUrl=${{ secrets.DEVOPS_AGENT_WEBHOOK_URL }} \
               DevOpsAgentWebhookSecret=${{ secrets.DEVOPS_AGENT_WEBHOOK_SECRET }}
